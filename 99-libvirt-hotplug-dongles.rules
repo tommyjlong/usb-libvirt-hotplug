@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ENV{PRODUCT}=="10c4/ea60/100",  RUN+="/opt/udev-scripts/usb-libvirt-hotplug.sh hassio"
