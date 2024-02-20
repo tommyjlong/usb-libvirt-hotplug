@@ -82,7 +82,9 @@ set -e
 if [ ! -z "${XML_FILE_LIST}" ]; then
  #echo "Attaching using Files: ${XML_FILE_LIST}" >&2
   for val in ${XML_FILE_LIST}; do
+     set +e
      virsh ${COMMAND} ${DOMAIN} --file $val
+     set -e
   done
 else
   echo "No XML file list found. Nothing to attach to $DOMAIN"

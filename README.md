@@ -83,7 +83,7 @@ Place this script in the directory specified in the udev rules file, and give it
 
 Open the shell script and provide the following configurations:
 * FILEPATH - This is the directory that the script will use to manage XML files.  In this example its the same directory that the script resides in which is `FILEPATH="/opt/udev-scripts/"`.
-* Serial ID Matching - There are some uses cases where Vendor/Product ID is not sufficient, and a Serial ID can be used to further identify a USB device.  If such is the case, set `MATCH_SERAIL_ID=1` and configure a "stick" with the `IDI_SHORT_SERIAL` for that USB device.  The IDI_SHORT_SERIAL can be found by using the command (with the USB device plugged in):<br>
+* Serial ID Matching - There are some uses cases where Vendor/Product ID is not sufficient, and a Serial ID can be used to further identify a USB device.  If such is the case, set `MATCH_SERIAL_ID=1` and configure a "stick" with the `IDI_SHORT_SERIAL` for that USB device.  The IDI_SHORT_SERIAL can be found by using the command (with the USB device plugged in):<br>
 `$udevadm info /dev/X` where X is the device file for the USB Device (example `/dev/ttyUSB0`).<br>
 
 As an example:
