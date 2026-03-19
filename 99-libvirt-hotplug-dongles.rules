@@ -1,1 +1,5 @@
-SUBSYSTEM=="usb", ENV{PRODUCT}=="10c4/ea60/100",  RUN+="/opt/udev-scripts/usb-libvirt-hotplug.sh hassio"
+# Specify where the usb-libvirt-hotplug.sh script is to run
+# Optionally can limit which usb plugs will cause the script to run by specifying the PRODUCT string.
+SUBSYSTEM=="usb",  RUN+="/opt/udev-scripts/usb-libvirt-hotplug.sh"
+#SUBSYSTEM=="usb", ENV{PRODUCT}=="10c4/ea60/100",  RUN+="/opt/udev-scripts/usb-libvirt-hotplug.sh"
+

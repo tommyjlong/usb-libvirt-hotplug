@@ -38,37 +38,6 @@ fi
 
 DOMAIN_DIR="${DOMAIN}/"
 
-#
-# Libvirtd Hook for use with qemu.
-# I could not get /etc/libivird/hook/qemu script
-#   to call this script, but I left stuff here anyway.
-#
-#HOOK_PHASE=$2  
-HOOK_PHASE='started'
-
-if [ -z "${HOOK_PHASE}" ]; then
-  echo "Missing libvirt hook phase parameter for ${PROG}." >&2
-  exit 1
-fi
-
-if [ "${HOOK_PHASE}" == 'prepare' ]; then
-  echo "prepare hook"
-  exit 0 
-elif [ "${HOOK_PHASE}" == 'start' ]; then
-  echo "start hook"
-  exit 0 
-elif [ "${HOOK_PHASE}" == 'started' ]; then
-  echo "started hook"
-elif [ "${HOOK_PHASE}" == 'stopped' ]; then
-  echo "stopped hook"
-  exit 0 
-elif [ "${HOOK_PHASE}" == 'release' ]; then
-  echo "release hook"
-  exit 0 
-else
-  echo "HOOK PHASE unknown"
-  exit 0 
-fi
 
 #
 # For now we'll assume the VM is running

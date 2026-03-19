@@ -1,0 +1,12 @@
+[Unit]
+Description=Reattach USB Devices to Libvirt After Startup
+After=libvirtd.service
+Requires=libvirtd.service
+
+[Service]
+Type=oneshot
+ExecStart=-/opt/udev-scripts/startup-reattach.sh
+#RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
